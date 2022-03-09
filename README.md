@@ -7,6 +7,6 @@
 `npm install`
 
 create .env file:
-`MONGO_URI = ""  
-SECRET_KEY = ""`
+`MONGO_URI = ""`
+`SECRET_KEY = ""`
 
