@@ -13,7 +13,7 @@ require('dotenv').config();
 // Loading routers
 const bookRouter = require('./routes/api/bookRouter');
 const userRouter = require('./routes/api/userRouter');
-//const issueRouter = require('./routes/api/issueRouter');
+const issueRouter = require('./routes/api/issueRouter');
 
 const app= express();
 
@@ -45,7 +45,7 @@ app.use(passport.initialize());
 // Use routes
 app.use('/api/books',bookRouter);
 app.use('/api/users',userRouter);
-//app.use('/api/issues',issueRouter);
+app.use('/api/issues',issueRouter);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {

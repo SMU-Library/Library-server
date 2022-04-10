@@ -34,17 +34,12 @@ const bookSchema = new Schema({
         max: 1000,
         required: true
     },
-    shelf: {
-        type: Number,
-        min: 1,
-        max: 100,
-        required: true
-    },
-    floor: {
-        type: Number,
-        min: 0,
-        max: 8
-    }
+    // shelf: {
+    //     type: Number,
+    //     min: 1,
+    //     max: 100,
+    //     required: true
+    // },
 }, {
     timestamps: true
 });

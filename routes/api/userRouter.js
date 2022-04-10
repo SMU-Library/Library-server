@@ -45,7 +45,6 @@ function(req,res,next){
 .then((user) => {
   if(user&&!user.admin){
     user.setPassword(req.body.password, function(){
-
       user.save();
        res.status(200).json({message: 'password changed successfully'});
   });
