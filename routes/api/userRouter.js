@@ -65,7 +65,7 @@ router.post('/signup',cors.corsWithOptions, (req, res, next) => {
     firstname : req.body.firstname,
     lastname : req.body.lastname,
     email : req.body.email,
-   roll : req.body.roll }), 
+   studentID : req.body.studentID }), 
     req.body.password, (err, user) => {
       if(err) {
         res.statusCode = 500;
