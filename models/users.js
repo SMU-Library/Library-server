@@ -16,7 +16,7 @@ var User = new Schema({
           required: true,
           unique: true
       },
-      studentID:{
+      roll:{
         type: String,
         required: true,
         unique: true

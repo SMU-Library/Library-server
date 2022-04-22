@@ -45,6 +45,7 @@ function(req,res,next){
 .then((user) => {
   if(user&&!user.admin){
     user.setPassword(req.body.password, function(){
+
       user.save();
        res.status(200).json({message: 'password changed successfully'});
   });
@@ -65,15 +66,14 @@ router.post('/signup',cors.corsWithOptions, (req, res, next) => {
     firstname : req.body.firstname,
     lastname : req.body.lastname,
     email : req.body.email,
-   studentID : req.body.studentID }), 
+    roll : req.body.roll }), 
     req.body.password, (err, user) => {
       if(err) {
         res.statusCode = 500;
         res.setHeader('Content-Type', 'application/json');
         res.json({err: err});
       }
-      else {
-                 
+      else {      
         user.save((err, user) => {
           if (err) {
             res.statusCode = 500;
@@ -149,3 +149,4 @@ router.get('/checkJWTtoken', cors.corsWithOptions, (req, res) => {
 });
 
 module.exports = router;
+   
