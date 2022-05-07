@@ -3,15 +3,13 @@ const mongoose=require('mongoose');
 const bodyParser=require('body-parser');
 const path=require('path');
 var passport = require('passport');
-var cors = require('cors')
 var authenticate = require('./authenticate');
-require('dotenv').config();
+
 
 // Loading routers
 const bookRouter = require('./routes/api/bookRouter');
 const userRouter = require('./routes/api/userRouter');
 const issueRouter = require('./routes/api/issueRouter');
-
 const app= express();
 
 app.use(function(req, res, next) {
@@ -26,8 +24,7 @@ app.use(function(req, res, next) {
 
 // Bodyparser Middleware
 app.use(bodyParser.json());
-// cors Middleware
-app.use(cors())
+
 // DB config 
 const mongoURI = require('./config/keys').mongoURI;
 
@@ -54,4 +51,5 @@ if (process.env.NODE_ENV === 'production') {
   }
 
 const port = process.env.PORT || 5000;
+
 app.listen(port, ()=> console.log(`Server started running on port ${port}`));

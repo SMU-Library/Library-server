@@ -21,7 +21,7 @@ var User = new Schema({
         required: true,
         unique: true
       },
-    admin:   {
+     admin:   {
         type: Boolean,
         default: false
     }

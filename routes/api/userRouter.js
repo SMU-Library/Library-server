@@ -66,14 +66,15 @@ router.post('/signup',cors.corsWithOptions, (req, res, next) => {
     firstname : req.body.firstname,
     lastname : req.body.lastname,
     email : req.body.email,
-    roll : req.body.roll }), 
+   roll : req.body.roll }), 
     req.body.password, (err, user) => {
       if(err) {
         res.statusCode = 500;
         res.setHeader('Content-Type', 'application/json');
         res.json({err: err});
       }
-      else {      
+      else {
+                 
         user.save((err, user) => {
           if (err) {
             res.statusCode = 500;

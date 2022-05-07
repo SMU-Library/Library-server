@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-// update when deploying 
 const whitelist = ['http://localhost:3000', 'http://localhost:5000'];
 var corsOptionsDelegate = (req, callback) => {
     var corsOptions;
@@ -18,5 +17,3 @@ var corsOptionsDelegate = (req, callback) => {
 
 exports.cors = cors();
 exports.corsWithOptions = cors(corsOptionsDelegate);
-
-
